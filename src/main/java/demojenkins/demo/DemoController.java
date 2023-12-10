@@ -8,6 +8,6 @@ public class DemoController {
 
     @GetMapping(value = "/about")
     public String contact(){
-        return "Hello world";
+        return "Hello world1";
     }
 }
