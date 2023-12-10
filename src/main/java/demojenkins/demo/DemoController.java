@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
 
     @GetMapping(value = "/about")
-    public String contact(){
+    public String about(){
         return "Hello world1";
+    }
+    @GetMapping(value = "/contact")
+    public String contact(){
+        return "Hello you";
     }
 }
