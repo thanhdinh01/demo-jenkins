@@ -8,7 +8,7 @@ public class DemoController {
 
     @GetMapping(value = "/about")
     public String about(){
-        return "Hello world123";
+        return "Hello world1";
     }
     @GetMapping(value = "/contact")
     public String contact(){
