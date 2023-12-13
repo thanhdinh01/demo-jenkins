@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Build job') {
+        stage('Trigger Build') {
             steps {
-                build quietPeriod: 1, job: 'job4-pipeline'
+                build quietPeriod: 3, job: 'job4-pipeline'
             }
         }
         stage('Run API') {
