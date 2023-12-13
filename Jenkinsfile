@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('Clone') {
+        stage('Run API') {
             steps {
-                git 'https://github.com/thanhdinh01/demo-jenkins.git'
+                bat 'C:\\Users\\LaptopAZ.vn\\AppData\\Roaming\\npm\\newman run D:\Web_BE\jenkins\postman-collection\RESTful-API-basics.postman_collection.json'
             }
         }
     }
