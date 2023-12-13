@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Trigger Build') {
             steps {
-                build quietPeriod: 3, job: 'job4-pipeline'
+                echo 'alo'
             }
         }
         stage('Run API') {
