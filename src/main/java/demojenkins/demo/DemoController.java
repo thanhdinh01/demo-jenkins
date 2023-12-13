@@ -12,7 +12,7 @@ public class DemoController {
     }
     @GetMapping(value = "/contact")
     public String contact(){
-        return "Hello you";
+        return "Hello you1";
     }
 
 }
