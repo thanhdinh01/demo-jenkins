@@ -10,11 +10,11 @@ class DemoControllerTest {
     @Test
     void about() {
 //        DemoController demoController= new DemoController();
-        assertEquals("Hello world1",demoController.about());
+        assertEquals("Hello world1 okea123",demoController.about());
     }
 
     @Test
     void contact() {
-        assertEquals("Hello you",demoController.contact());
+        assertEquals("Hello you1",demoController.contact());
     }
 }
