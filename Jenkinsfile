@@ -22,8 +22,8 @@ pipeline{
         stage('Push Docker Image to Hub'){
             steps{
                 script{
-                    withCredentials([string(credentialsId: 'dockerhub-pw', variable: 'dockerhub-pw')]) {
-                        bat 'docker login -u thanhdinh01 -p ${dockerhub-pw}'
+                    withCredentials([string(credentialsId: 'dockerhubpw', variable: 'dockerhubpw')]) {
+                        bat 'docker login -u thanhdinh01 -p ${dockerhubpw}'
                     }
                     bat 'docker push thanhdinh01/dev-integration'
                 }
