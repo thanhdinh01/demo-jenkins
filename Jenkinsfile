@@ -18,6 +18,8 @@ pipeline{
                     bat 'docker build -t thanhdinh01/dev-integration:v1 .'
                 }
             }
+        }
+        stage('Push Docker Image to Hub'){
             steps{
                 script{
                     withCredentials([string(credentialsId: 'dockerhub-pw', variable: 'dockerhub-pw')]) {
