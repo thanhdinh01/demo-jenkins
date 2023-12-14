@@ -14,5 +14,9 @@ public class DemoController {
     public String contact(){
         return "Hello you1";
     }
+    @GetMapping(value = "/dashboard")
+    public String dashboard(){
+        return "Hello guys";
+    }
 
 }
