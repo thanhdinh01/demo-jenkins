@@ -23,7 +23,7 @@ pipeline{
             steps{
                 script{
                     withCredentials([string(credentialsId: 'dockerhubpw', variable: 'dockerhubpw')]) {
-                        bat 'docker login -u thanhdinh01 -p ${dockerhubpw}'
+                        bat 'docker login -u thanhdinh01 -p %dockerhubpw%'
                     }
                     bat 'docker push thanhdinh01/dev-integration'
                 }
