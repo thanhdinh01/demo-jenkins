@@ -12,7 +12,23 @@ pipeline{
                 bat 'mvn clean install'
             }
         }
-
+        stage('Build Docker Image'){
+            steps{
+                script{
+                    bat 'docker build -t thanhdinh01/dev-integration:v1 .'
+                }
+            }
+        }
+        stage('Push Docker Image to Hub'){
+            steps{
+                script{
+                    withCredentials([string(credentialsId: 'dockerhubpw', variable: 'dockerhubpw')]) {
+                        bat 'docker login -u thanhdinh01 -p %dockerhubpw%'
+                    }
+                    bat 'docker push thanhdinh01/dev-integration:v1'
+                }
+            }
+        }
 
     }
 }
