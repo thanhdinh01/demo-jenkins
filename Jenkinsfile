@@ -32,7 +32,7 @@ pipeline{
                         bat 'docker login -u thanhdinh01 -p %dockerhubpw%'
                     }
                     bat 'docker push thanhdinh01/dev-integration:v1'
-                    bat 'docker images purge'
+                    bat 'docker image prune'
                 }
             }
         }
