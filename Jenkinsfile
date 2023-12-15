@@ -9,7 +9,7 @@ pipeline{
         stage('Build Maven'){
             steps{
                 git credentialsId: 'githubpw', url: 'https://github.com/thanhdinh01/demo-jenkins.git'
-                bat 'mvn clean install'
+                bat 'mvn clean package'
 
             }
             post{
