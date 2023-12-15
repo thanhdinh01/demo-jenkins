@@ -22,6 +22,7 @@ pipeline{
             steps{
                 script{
                     bat 'docker build -t thanhdinh01/dev-integration:v1 .'
+                    bat 'docker image prune -f'
                 }
             }
         }
@@ -32,7 +33,6 @@ pipeline{
                         bat 'docker login -u thanhdinh01 -p %dockerhubpw%'
                     }
                     bat 'docker push thanhdinh01/dev-integration:v1'
-                    bat 'docker image prune -f'
                 }
             }
         }
