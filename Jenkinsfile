@@ -10,6 +10,12 @@ pipeline{
             steps{
                 git credentialsId: 'githubpw', url: 'https://github.com/thanhdinh01/demo-jenkins.git'
                 bat 'mvn clean install'
+
+            }
+            post{
+                always{
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                }
             }
         }
         stage('Build Docker Image'){
@@ -26,6 +32,7 @@ pipeline{
                         bat 'docker login -u thanhdinh01 -p %dockerhubpw%'
                     }
                     bat 'docker push thanhdinh01/dev-integration:v1'
+                    bat 'docker images purge'
                 }
             }
         }
