@@ -15,6 +15,6 @@ class DemoControllerTest {
 
     @Test
     void contact() {
-        assertEquals("Hello you12",demoController.contact());
+        assertEquals("Hello you1",demoController.contact());
     }
 }
