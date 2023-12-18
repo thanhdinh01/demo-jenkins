@@ -8,8 +8,8 @@ pipeline{
     stages{
         stage('Login docker'){
             steps{
-                withCredentials([string(credentialsId: 'dockerhubpw', variable: 'dockerhubpw')]) {
-                    bat 'docker login -u thanhdinh01 -p %dockerhubpw%'
+                withCredentials([string(credentialsId: 'my-credentials', variable: 'my-credentials')]) {
+                    bat 'docker login -u thanhdinh01 -p %my-credentials%'
                 }
             }
         }
