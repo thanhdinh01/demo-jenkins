@@ -6,13 +6,10 @@ pipeline{
         jdk 'jdk17'
     }
     stages{
-        stage('Test'){
+        stage('Login docker'){
             steps{
-                bat 'mvn test'
-            }
-            post{
-                always{
-                    junit '**/target/surefire-reports/TEST-*.xml'
+                withCredentials([string(credentialsId: 'dockerhubpw', variable: 'dockerhubpw')]) {
+                    bat 'docker login -u thanhdinh01 -p %dockerhubpw%'
                 }
             }
         }
